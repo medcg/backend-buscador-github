@@ -1,12 +1,14 @@
 import Search from "../models/Search.js";
 import Axios from "axios";
+import dotenv from 'dotenv'
 
 export const createSearch = async (req, res) => {
   try {
+    const apiKey = process.env.GITHUB_API_KEY;
     const { search} = req.body;
     const result = await Axios.get(`https://api.github.com/search/users?q=${search}`, {
       headers: {
-        Authorization: 'token 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'
+        Authorization: `Bearer ${apiKey}`
       }
     });
     const data = result.data;
