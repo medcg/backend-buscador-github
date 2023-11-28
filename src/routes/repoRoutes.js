@@ -3,10 +3,10 @@ import * as repoController from '../controllers/repo.Controllers.js';
 
 const router = express.Router();
 
-router.post('/search', repoController.createSearch);
-router.get('/search', repoController.getSearches);
-router.get('/search/:id', repoController.getSearchById);
-router.put('/search/:id', repoController.updateSearch);
-router.delete('/search/:id', repoController.deleteSearch);
+router.post('/repo', repoController.createSearch);
+router.get('/repo', repoController.getSearches);
+router.get('/repo/:id', repoController.getSearchById);
+router.put('/repo/:id', repoController.updateSearch);
+router.delete('/repo/:id', repoController.deleteSearch);
 
 export default router;
