@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "5c2bdc28-97b5-4267-9195-21da23ec9140",
+		"name": "Entregable Backend Repositorios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29803191"
+	},
+	"item": [
+		{
+			"name": "createSearch",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "createSearch",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"search\": \"backend\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/repo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"repo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateSearch",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/repo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"repo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSearchByid",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "deleteSearch",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/repo?entregable",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"repo"
+					],
+					"query": [
+						{
+							"key": "entregable",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
