@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "createSearch",
+			"name": "getAllRepository",
 			"request": {
 				"method": "GET",
 				"header": []
@@ -15,13 +15,18 @@
 			"response": []
 		},
 		{
-			"name": "createSearch",
+			"name": "createRepository",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"search\": \"backend\"\r\n}"
+					"raw": "{\r\n    \"search\": \"backend\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
 					"raw": "http://localhost:3000/api/repo",
@@ -39,7 +44,7 @@
 			"response": []
 		},
 		{
-			"name": "updateSearch",
+			"name": "updateRepository",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -59,7 +64,7 @@
 			"response": []
 		},
 		{
-			"name": "getSearchByid",
+			"name": "getRepositoryByid",
 			"request": {
 				"method": "GET",
 				"header": []
@@ -67,7 +72,7 @@
 			"response": []
 		},
 		{
-			"name": "deleteSearch",
+			"name": "deleteRepository",
 			"request": {
 				"method": "DELETE",
 				"header": [],

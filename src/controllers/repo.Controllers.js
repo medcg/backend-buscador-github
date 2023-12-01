@@ -1,4 +1,4 @@
-import Search from "../models/Search.js";
+import Repository from "../models/Repo.js";
 import Axios from "axios";
 import dotenv from 'dotenv'
 
@@ -12,7 +12,7 @@ export const createSearch = async (req, res) => {
       }
     });
     const data = result.data;
-    const newSearch = await Search.create({
+    const newSearch = await Repository.create({
       query: search, 
       results: data.items,
     }); 
@@ -25,7 +25,7 @@ export const createSearch = async (req, res) => {
 
 export const getSearches = async (req, res) => {
   try {
-    const searches = await Search.find();
+    const searches = await Repository.find();
     res.status(200).json(searches);
   } catch (error) {
     res.status(500).json({ error: "Error al obtener las búsquedas" });
@@ -34,7 +34,7 @@ export const getSearches = async (req, res) => {
 
 export const getSearchById = async (req, res) => {
   try {
-    const search = await Search.findById(req.params.id);
+    const search = await Repository.findById(req.params.id);
     if (!search) {
       return res.status(404).json({ error: "Búsqueda no encontrada" });
     }
@@ -46,7 +46,7 @@ export const getSearchById = async (req, res) => {
 
 export const updateSearch = async (req, res) => {
   try {
-    const updatedSearch = await Search.findByIdAndUpdate(
+    const updatedSearch = await Repository.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true }
@@ -62,7 +62,7 @@ export const updateSearch = async (req, res) => {
 
 export const deleteSearch = async (req, res) => {
   try {
-    const deletedSearch = await Search.findByIdAndRemove(req.params.id);
+    const deletedSearch = await Repository.findByIdAndRemove(req.params.id);
     if (!deletedSearch) {
       return res.status(404).json({ error: "Búsqueda no encontrada" });
     }
