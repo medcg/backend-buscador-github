@@ -62,7 +62,7 @@ export const updateSearch = async (req, res) => {
 
 export const deleteSearch = async (req, res) => {
   try {
-    const deletedSearch = await Search.findByIdAndRemove({_id: req.params.id});
+    const deletedSearch = await Search.findByIdAndDelete({_id: req.params.id});
     if (!deletedSearch) {
       return res.status(404).json({ error: "Búsqueda no encontrada" });
     }
